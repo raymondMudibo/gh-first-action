@@ -1,0 +1,32 @@
+
+name: First Workflow
+
+# Controls when the workflow will run
+on: workflow_dispatch
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "first-job"
+  first-job:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+     
+      # Runs a single command using the runners shell
+      - name: Print greeting
+        run: echo "It's cooking!"
+
+      # Runs a set of commands using the runners shell
+      - name: Print good bye
+        run: |
+          echo "See you later. Good bye!"
